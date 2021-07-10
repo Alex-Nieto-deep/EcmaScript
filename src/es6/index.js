@@ -101,7 +101,7 @@ console.log(square(5));
 
 const helloPromise = () => {
     return new Promise((resolve, reject) => {
-        if (!!0) {
+        if (!!1) {
             resolve('Hey')
         } else {
             reject('Upps')
@@ -113,3 +113,44 @@ helloPromise()
     .then(response => console.log(response))
     .then(() => console.log('correcto'))
     .catch(error => console.log(error));
+
+
+//clases
+class Calculator {
+    constructor() {
+        this.valueA = 0;
+        this.valueB = 0;
+    }
+
+    suma(valueA, valueB) {
+        this.valueA = valueA;
+        this.valueB = valueB;
+        return this.valueA + this.valueB;
+    }
+}
+
+const calc = new Calculator();
+console.log(calc.suma(2,2));
+
+//modulos
+
+import { hello } from './module';
+
+hello();
+
+//em5
+const hello = require('./module')
+
+console.log(hello())
+
+// generadores
+
+
+function* helloWorld() {
+    if (1) {
+        yield 'hello, ';
+    }
+    if (1) {
+        yield 'World';
+    }
+}
