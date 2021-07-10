@@ -60,3 +60,56 @@ console.log(education);
 console.log(globalvar);
 
 const a = 'b';
+
+/**
+ * Parameters in Objects
+ */
+
+let name = 'Alex';
+let age = 32;
+
+//es5
+obj = {name: name, age: age};
+
+//es6
+obj2 = {name, age };
+
+console.log(obj);
+console.log(obj2);
+
+// Arrow Functions
+
+const names = [
+    {name: 'Alex', age: 21},
+    {name: 'Yesica', age: 22}
+]
+
+let listOfName = names.map( function (item) {
+    console.log(item.name);
+    return item.name;
+})
+
+console.log(listOfName);
+
+let listOfName2 = names.map(item => console.log(item.name));
+
+const square = num => num * num;
+console.log(square(5));
+
+
+// Promesas
+
+const helloPromise = () => {
+    return new Promise((resolve, reject) => {
+        if (!!0) {
+            resolve('Hey')
+        } else {
+            reject('Upps')
+        }
+    })
+}
+
+helloPromise()
+    .then(response => console.log(response))
+    .then(() => console.log('correcto'))
+    .catch(error => console.log(error));
