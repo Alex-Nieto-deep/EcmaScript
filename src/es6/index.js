@@ -147,10 +147,16 @@ console.log(hello())
 
 
 function* helloWorld() {
-    if (1) {
+    if (1) { 
         yield 'hello, ';
     }
     if (1) {
         yield 'World';
     }
 }
+
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value) 
+console.log(generatorHello.next().value)
+console.log(generatorHello.next().value)
+
